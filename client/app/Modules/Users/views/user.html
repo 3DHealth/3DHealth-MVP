@@ -1,0 +1,44 @@
+
+<div ng-controller="userController">
+
+    <div class="panel panel-info">
+        <div class="panel-heading">
+            <h3>Users List</h3>
+        </div>
+        <div class="panel-body dHealthtable">
+            <table class="table table-bordered">
+                <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>age</th>
+                    <th>Mobile</th>
+                    <th>Email Id</th>
+                    <th>Qualification</th>
+                    <th>Specialization</th>
+                    <th>Organization</th>
+                    <th>Admin</th>
+                    <th>Status</th>
+                    <th><a href="#!/user/new" class="btn btn-success" role="button">Add user</a></th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr ng-repeat="x in users">
+                    <td>{{ x.name }}</td>
+                    <td>{{ x.age }}</td>
+                    <td>{{ x.mobile }}</td>
+                    <td>{{ x.emailId }}</td>
+                    <td>{{ x.qualification }}</td>
+                    <td>{{ x.specialization }}</td>
+                    <td>{{ x.organization }}</td>
+                    <td>{{ x.isAdmin}}</td>
+                    <td>{{ x.status }}</td>
+                    <td><a href="#!/user/{{x._id}}/edit" class="btn btn-info" role="button"><span class="glyphicon glyphicon-edit"></span> Edit</a>
+                        <button type="button" class="btn btn-danger" ng-click='vm.deleteUser(x._id)'><span class="glyphicon glyphicon-remove-sign"></span>Delete</button></td>
+                    <!-- <td><button type="button" class="btn btn-info" ng-click='vm.edit(x._id)'>Edit</button><button type="button" class="btn btn-danger" ng-click='vm.deleteUser(x._id)'>Delete</button></td>-->
+                </tr>
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

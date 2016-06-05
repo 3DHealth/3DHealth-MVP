@@ -1,0 +1,31 @@
+
+<div ng-controller="clinicController">
+
+    <div class="panel panel-info">
+        <div class="panel-heading">
+            <h3>Clinics List</h3>
+        </div>
+        <div class="panel-body dHealthtable">
+            <table class="table table-bordered">
+                <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Details</th>
+                    <th>Account Status</th>
+                    <th><a href="#!/clinic/new" class="btn btn-success" role="button">Add clinics</a></th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr ng-repeat="x in clinics">
+                    <td>{{ x.name }}</td>
+                    <td>{{ x.details}}</td>
+                    <td>{{ x.accountStatus }}</td>
+                    <td><a href="#!/clinic/{{x._id}}/edit" class="btn btn-info" role="button"><span class="glyphicon glyphicon-edit"></span> Edit</a>
+                        <button type="button" class="btn btn-danger" ng-click='vm.deleteClinic(x._id)'><span class="glyphicon glyphicon-remove-sign"></span>Delete</button></td>
+                    <!-- <td><button type="button" class="btn btn-info" ng-click='vm.edit(x._id)'>Edit</button><button type="button" class="btn btn-danger" ng-click='vm.deleteUser(x._id)'>Delete</button></td>-->
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
